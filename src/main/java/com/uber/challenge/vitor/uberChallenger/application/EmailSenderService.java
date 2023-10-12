@@ -3,7 +3,9 @@ package com.uber.challenge.vitor.uberChallenger.application;
 import com.uber.challenge.vitor.uberChallenger.adapters.EmailSenderGateway;
 import com.uber.challenge.vitor.uberChallenger.core.EmailSenderUseCase;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class EmailSenderService implements EmailSenderUseCase {
 
     private final EmailSenderGateway emailSenderGateway;

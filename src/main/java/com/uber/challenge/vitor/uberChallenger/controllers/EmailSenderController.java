@@ -30,7 +30,8 @@ public class EmailSenderController {
             this.emailSenderService.sendEmail(requestDTO.to(),requestDTO.subject(),requestDTO.body());
             return ResponseEntity.ok("Email enviado com sucesso");
         }catch (EmailServiceExcepetion e){
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao enviar email") ;
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new StringBuilder().append("Erro ao " +
+                    "enviar email").append(e).toString()) ;
         }
 
     }
